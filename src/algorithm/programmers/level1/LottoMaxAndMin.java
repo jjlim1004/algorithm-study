@@ -6,8 +6,6 @@ public class LottoMaxAndMin {
             int[] answer = new int[2];
             int winCount  = 0 ;
             int zeroCount = 0 ;
-            int maxCount = 0  ;
-            int minCount = 0  ;
 
             for (int lotto: lottos) {
                 if(lotto == 0 ){
@@ -21,11 +19,8 @@ public class LottoMaxAndMin {
                     }
                 }
             }
-
-            maxCount = winCount + zeroCount;
-            minCount =  winCount;
-            answer[0] = grade(maxCount);
-            answer[1] = grade(minCount);
+            answer[0] = grade(winCount + zeroCount);
+            answer[1] = grade(winCount);
             return answer;
         }
 
