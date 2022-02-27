@@ -8,16 +8,17 @@ public class NumerStringAndWord {
             String answer= "";
 
             String[] wordArray = s.split("");
+
             for (int i = 0; i <wordArray.length ; i++) {
                 if(!Character.isDigit(wordArray[i].charAt(0))){
                     notNumber += wordArray[i];
 
                     if(Character.isDigit(returnNumber(notNumber).charAt(0))){
-                        answer += wordArray[i];
+                        answer += returnNumber(notNumber);
+                        notNumber ="";
                     }
                     continue;
                 }
-
                 answer += wordArray[i];
             }
 
