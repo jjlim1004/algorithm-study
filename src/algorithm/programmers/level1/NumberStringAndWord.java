@@ -1,6 +1,6 @@
 package algorithm.programmers.level1;
 
-public class NumerStringAndWord {
+public class NumberStringAndWord {
 
     class Solution {
         public int solution(String s) {
