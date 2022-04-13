@@ -4,30 +4,19 @@ import java.util.Locale;
 
 public class JadenCase {
     public String solution(String s) {
-        String answer = "";
-        String[] splited = s.split(" ");
+        String answer = s.substring(0,1).toUpperCase();
+        char temp;
 
-
-        for (int i = 0; i < splited.length  ; i++) {
-            if(splited[i].charAt(0) >= '0' && splited[i].charAt(0) <= '9'){
-                answer = answer + splited[i] + " ";
-                continue;
+        for (int i = 1; i <s.length() ; i++) {
+            temp =  s.charAt(i);
+            if(s.charAt(i - 1) == ' '){
+                temp = Character.toUpperCase(temp);
+            }else{
+                temp = Character.toLowerCase(temp);
             }
-
-            String[] splitedWord =splited[i].split("");
-            for (int j = 0; j < splitedWord.length; j++) {
-                if(j==0){
-                    splitedWord[j] = splitedWord[j].toUpperCase();
-                    answer = answer + splitedWord[j];
-                    continue;
-                }
-                splitedWord[j] = splitedWord[j].toLowerCase();
-                answer = answer + splitedWord[j];
-            }
-            answer = answer  +" ";
+            answer += temp;
         }
-
-        answer = answer.substring(0,answer.length()-1);
         return answer;
     }
 }
+
