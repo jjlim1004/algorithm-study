@@ -1,7 +1,5 @@
 package algorithm.programmers.level2;
 
-import java.util.Locale;
-
 public class JadenCase {
     public String solution(String s) {
         String answer = s.substring(0,1).toUpperCase();
